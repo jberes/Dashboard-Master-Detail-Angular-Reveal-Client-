@@ -1,0 +1,23 @@
+<div class="row-layout group">
+  <igx-card type="outlined" *ngFor="let item of revealDashboardsListDashboards" class="card">
+    <igx-card-header>
+      <div igxCardThumbnail>
+        <igx-avatar icon="person" [roundShape]="true"></igx-avatar>
+      </div>
+      <h3 igxCardHeaderTitle>
+        {{ item.Title }}
+      </h3>
+      <h5 igxCardHeaderSubtitle>
+        {{ item.DateChanged }}
+      </h5>
+    </igx-card-header>
+    <igx-card-media height="400px">
+      <img [src]="item.ThumbnailURL" class="image" />
+    </igx-card-media>
+    <igx-card-actions [reverse]="true" class="actions-content">
+      <button igxButton="flat" igxRipple routerLink="/dashboard-viewer" class="button">
+        Open Dashboard
+      </button>
+    </igx-card-actions>
+  </igx-card>
+</div>

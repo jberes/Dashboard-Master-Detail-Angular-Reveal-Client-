@@ -1,0 +1,21 @@
+<div class="column-layout group">
+  <igx-list class="list">
+    <igx-list-item [isHeader]="false" *ngFor="let item of revealDashboardsListDashboards">
+      <span igxListThumbnail>
+        <igx-avatar [src]="item.ThumbnailURL" [roundShape]="true"></igx-avatar>
+      </span>
+      <span igxListLineTitle>{{ item.Title }}</span>
+      <span igxListLineSubTitle>{{ item.AddedBy }}</span>
+      <span igxListAction>
+        <igx-icon class="icon">
+          star
+        </igx-icon>
+      </span>
+    </igx-list-item>
+  </igx-list>
+</div>
+<div class="column-layout group_1">
+  <h5 class="h5">
+    Stick Dashboard Here
+  </h5>
+</div>
