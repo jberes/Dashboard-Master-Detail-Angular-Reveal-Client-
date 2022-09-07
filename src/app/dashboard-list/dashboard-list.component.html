@@ -1,6 +1,6 @@
 <div class="column-layout group">
-  <igx-list class="list">
-    <igx-list-item [isHeader]="false" *ngFor="let item of revealDashboardsListDashboards">
+  <igx-list #list class="list" >
+    <igx-list-item (click)="onItemClicked(item)" [isHeader]="false" *ngFor="let item of revealDashboardsListDashboards">
       <span igxListThumbnail>
         <igx-avatar [src]="item.ThumbnailURL" [roundShape]="true"></igx-avatar>
       </span>
@@ -15,7 +15,5 @@
   </igx-list>
 </div>
 <div class="column-layout group_1">
-  <h5 class="h5">
-    Stick Dashboard Here
-  </h5>
+  <div #revealView style='height: calc(100vh - 115px); width: 100%; position:relative;'></div>
 </div>

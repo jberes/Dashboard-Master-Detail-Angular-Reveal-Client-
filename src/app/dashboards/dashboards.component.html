@@ -15,7 +15,7 @@
       <img [src]="item.ThumbnailURL" class="image" />
     </igx-card-media>
     <igx-card-actions [reverse]="true" class="actions-content">
-      <button igxButton="flat" igxRipple routerLink="/dashboard-viewer" class="button">
+      <button igxButton="flat" igxRipple routerLink="/dashboard-viewer/{{ item.Title }}" class="button">
         Open Dashboard
       </button>
     </igx-card-actions>

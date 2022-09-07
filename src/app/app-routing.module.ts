@@ -12,7 +12,7 @@ export const routes: Routes = [
   { path: '', redirectTo: 'dashboards', pathMatch: 'full' },
   { path: 'error', component: UncaughtErrorComponent },
   { path: 'dashboards', component: DashboardsComponent, data: { text: 'Dashboards' } },
-  { path: 'dashboard-viewer', component: DashboardViewerComponent, data: { text: 'DashboardViewer' } },
+  { path: 'dashboard-viewer/:id', component: DashboardViewerComponent, data: { text: 'DashboardViewer' } },
   { path: 'dashboard-list', component: DashboardListComponent, data: { text: 'DashboardList' } },
   { path: '**', component: PageNotFoundComponent } // must always be last
 ];

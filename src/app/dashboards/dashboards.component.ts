@@ -15,6 +15,7 @@ export class DashboardsComponent implements OnInit {
 
   ngOnInit() {
     // depending on implementation, data subscriptions might need to be unsubbed later
-    this.revealDashboardsListService.getDashboards().subscribe(data => this.revealDashboardsListDashboards = data);
+    this.revealDashboardsListService.getDashboards().subscribe
+      (data => this.revealDashboardsListDashboards = data);
   }
 }
