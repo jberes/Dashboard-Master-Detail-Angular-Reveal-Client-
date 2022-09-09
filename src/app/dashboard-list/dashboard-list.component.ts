@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ControlContainer } from '@angular/forms';
 import { RevealDashboardsListService } from '../services/reveal-dashboards-list.service';
 
@@ -11,10 +11,15 @@ declare let $: any;
 })
 export class DashboardListComponent implements OnInit {
   public revealDashboardsListDashboards: any = null;
-@ViewChild('revealView') el!: ElementRef;
+
+  @ViewChild('revealView') el!: ElementRef;
+
 private revealView: any;
+private prevContact: any;
+
   constructor(
     private revealDashboardsListService: RevealDashboardsListService,
+    private cdr: ChangeDetectorRef 
   ) {}
 
   ngOnInit() {
@@ -22,8 +27,17 @@ private revealView: any;
     this.revealDashboardsListService.getDashboards().subscribe
       (data => this.revealDashboardsListDashboards = data);
   }
+
   public onItemClicked(item: any)
   {
+
+    if (this.prevContact) {
+      this.prevContact.selected = false;
+    }
+      item.selected = true;
+      this.prevContact = item;
+      this.cdr.detectChanges();
+
     $.ig.RevealSdkSettings.setBaseUrl('https://samples.revealbi.io/upmedia-backend/reveal-api/');
     $.ig.RevealSdkSettings.enableNewCharts='true'
     $.ig.RevealSdkSettings.ensureFontsLoadedAsync().then(() => {

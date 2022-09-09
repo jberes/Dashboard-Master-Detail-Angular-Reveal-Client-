@@ -1,6 +1,14 @@
 <div class="column-layout group">
   <igx-list #list class="list" >
-    <igx-list-item (click)="onItemClicked(item)" [isHeader]="false" *ngFor="let item of revealDashboardsListDashboards">
+    
+    <igx-list-item 
+    
+    (click)="onItemClicked(item)" [isHeader]="false" 
+    *ngFor="let item of revealDashboardsListDashboards"
+      [ngClass]="item.selected ? 'selected' : ''" #item
+      igxRipple
+      igxRippleTarget=".igx-list__item-content"
+      >
       <span igxListThumbnail>
         <igx-avatar [src]="item.ThumbnailURL" [roundShape]="true"></igx-avatar>
       </span>
