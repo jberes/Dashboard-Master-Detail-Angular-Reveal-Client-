@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 // Standard CSS normalize, comment out if not required or using a different module
-@use "~minireset.css/minireset";
+// @use "~minireset.css/minireset";
 @use "igniteui-angular/theming" as *;
 
 @include core();
@@ -9,16 +9,16 @@
 @include light-theme($light-material-palette);
 
 body {
-  background: hsla(var(--igx-surface-500));
-  color: var(--igx-surface-500-contrast);
+  background: hsla(var(--ig-surface-500));
+  color: var(--ig-surface-500-contrast);
 }
 
 html, body {
   height: 100%;
 }
 
-.igx-typography {
-  h1, h2, h3, h4, h5, h6, p, .igx-typography__body-1 {
+.ig-typography {
+  h1, h2, h3, h4, h5, h6, p, .ig-typography__body-1 {
     margin: 0;
   }
 }
