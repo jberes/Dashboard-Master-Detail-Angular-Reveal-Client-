@@ -130,7 +130,6 @@
       }
     }
   },
-  "defaultProject": "dashboard-master-detail-angular-reveal-client",
   "cli": {
     "schematicCollections": [
       "@angular-eslint/schematics"
