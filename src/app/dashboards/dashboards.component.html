@@ -2,7 +2,7 @@
   <igx-card type="outlined" *ngFor="let item of revealDashboardsListDashboards" class="card">
     <igx-card-header>
       <div igxCardThumbnail>
-        <igx-avatar icon="person" [roundShape]="true"></igx-avatar>
+        <igx-avatar icon="person" shape="circle"></igx-avatar>
       </div>
       <h3 igxCardHeaderTitle>
         {{ item.Title }}
@@ -15,7 +15,7 @@
       <img [src]="item.ThumbnailURL" class="image" />
     </igx-card-media>
     <igx-card-actions [reverse]="true" class="actions-content">
-      <button igxButton="flat" igxRipple routerLink="/dashboard-viewer/{{ item.Title }}" class="button">
+      <button igxButton="flat" igxRipple routerLink="/dashboard-viewer/{{ item.Title }}" class="button" igxStart>
         Open Dashboard
       </button>
     </igx-card-actions>
